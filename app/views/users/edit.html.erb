@@ -1,2 +1,23 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<p id="notice"></p>
+<div class="container">
+ <div class="row">
+   <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+     <h2>User info</h2>
+      <div class="form-group">
+       <label for="user_name">Name</label>
+       <input class>
+      </div>
+      <div>
+       <label for="user_image">Image</label>
+       <input class="form-control-file user_image" accept="image/*" type="file" name="user[profile_image]" id="user_profile_image">
+      </div>
+      <div>
+       <label for="user_introduction">Introduction</label>
+       <textarea class="form-control introduction" name="user[introduction]" id="user_introduction"></textarea>
+      </div>
+      <div>
+       <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+      </div>
+    </div>
+  </div>
+</div>
