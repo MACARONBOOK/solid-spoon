@@ -21,8 +21,10 @@ class UsersController < ApplicationController
     redirect_to edit_user_path(@user.id)
   end
 
-  def destroy
 
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :profile_image)
   end
-
 end
