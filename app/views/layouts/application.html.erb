@@ -23,8 +23,8 @@
 
         <% if user_signed_in? %>
           <li class="nav-item">
-            <i class="fa-solid fa-house-chimney"></i>
             <%= link_to "Home", user_path(current_user.id), class: "nav-link text-light" %>
+            <i class="fas fa-home icon"></i>
           </li>
           <li class="nav-item">
             <%= link_to "Users", users_path, class: "nav-link text-light" %>
@@ -38,6 +38,7 @@
         <% else %>
           <li class="nav-item">
             <%= link_to "Home", root_path, class: "nav-link text-light" %>
+            <i class="fas fa-home icon"></i>
           </li>
           <li class="nav-item">
             <%= link_to "About", about_path, class: "nav-link text-light" %>
