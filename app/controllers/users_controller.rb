@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user_id = current_user.id
     @books = @user.books.page(params[:page]).per(5)
     @book = Book.new
+    
   end
 
   def edit

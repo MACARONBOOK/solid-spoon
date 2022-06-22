@@ -6,7 +6,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'list', user: @user ,book: @book %>
+      <%= render 'list', user: @user ,book: @book, user_id: @user_id  %>
 
 
 
@@ -29,8 +29,8 @@
          <% @books.each do |book| %>
           <tr>
             <td>
-              <%= link_to user_path(@user) do %>
-              <%= image_tag @user.get_profile_image(100,100) %>
+              <%= link_to user_path(book.user_id) do %>
+              <%= image_tag @user.get_profile_image(100, 100) %>
               <% end %>
             </td>
             <td><%= book.title %></td>
