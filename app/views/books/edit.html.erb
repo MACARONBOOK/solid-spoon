@@ -1,23 +1,26 @@
-<p id="notice"></p>
+<% if flash[:notice] %>
+  <p id="notice">
+    <%=flash[:notice] %></p>
+<% end %>
+
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li>
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+ <% end %>
 
 <div class="container">
  <div class="row">
    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
      <h2>Editing Book</h2>
-     <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-      <ul>
-        <% @book.errors.full_messages.each do |message| %>
-          <div class="form-error">
-            <%= message %>
-          </div>
-        <% end %>
-
-      </ul>
-    </div>
-    <% end %>
      <%=form_with model: @book do |f|%>
       <div class="field">
        <label>Title</label><br >
@@ -26,16 +29,14 @@
       <div class="field">
        <label>Opinion</label><br >
        <%=f.text_area :body %>
-
       </div>
       <div class="field">
        <%=f.submit "Update Book"%>
       </div>
-      <% end %>
       <%=link_to"Show",book_path(@book) %> |
-      <%=link_to"Back",:back %>
+      <%=link_to"Back", books_path %>
 
-     </form>
-    </div>
+     <% end %>
+   </div>
   </div>
 </div>
