@@ -4,58 +4,13 @@
 <% end %>
 
 <div class="container px-5 px-sm-0">
- <div class="row">
+  <div class="row">
     <div class="col-md-3">
-      <h2>User info</h2>
-        <%=image_tag @user.get_profile_image(100, 100) %>
-      <table class="table">
-        <tbody>
-          <tr></tr>
-          <tr>
-            <td>name</td>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <td>introduction</td>
-            <td><%= @user.introduction %></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <%=link_to edit_user_path(@user_id) do %>
-        <button type="button" class="btn btn-outline-secondary btn-lg btn-block"><i class="fas fa-user-cog fa-w-20"></i></button>
-      <% end %>
+      <%= render 'list', user: @user ,book: @book %>
 
 
-     <h2>New Book</h2>
-      <% if @book.errors.any? %>
-       <div id="error_explanation">
-        <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-        <ul>
-          <% @book.errors.full_messages.each do |message| %>
-            <div class="form-error">
-              <%= message %>
-            </div>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-      <%= form_with model: @book, url: '/books', method: :post do |f| %>
-
-        <div class="field">
-        <h4>Title</h4>
-        <%= f.text_field :title %>
-        </div>
-        <div class="field">
-        <h4>Opinion</h4>
-        <%= f.text_area :body%>
-        </div>
-        <div class="actions">
-        <%= f.submit 'Create Book' %>
-        </div>
-      <% end %>
-   </div>
+    </div>
   </div>
 
   <div class ="row">
