@@ -22,4 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
 # solid-spoon
+
+This rails application named bookersⅡ.
+After new registeration, can share your books and opinions with anyone, 
+can also make friends through books or hobbys.   
