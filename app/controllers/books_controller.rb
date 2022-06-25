@@ -1,8 +1,5 @@
 class BooksController < ApplicationController
   before_action :correct_user, only:[:edit, :update]
-  def new
-    @book = Book.new
-  end
 
   def create
     @book = Book.new(book_params)
@@ -46,9 +43,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    @book.destroy
-    redirect_to '/books'
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path
   end
 
   private
